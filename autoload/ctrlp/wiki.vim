@@ -22,7 +22,7 @@ function! ctrlp#wiki#init()
         \ (type(g:ctrlp_user_command) == type('')
         \  ? g:ctrlp_user_command
         \  : get(g:ctrlp_user_command, -1)),
-        \ s:root))
+        \  shellescape(s:root)))
 
   call filter(l:files,
         \ 'v:val =~# ''\v%(' . join(g:wiki_filetypes, '|') . ')$''')
